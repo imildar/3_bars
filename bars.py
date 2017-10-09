@@ -2,8 +2,8 @@ import requests
 import math
 
 
-def load_data(file):
-    return requests.get(file).json()
+def load_data(file_path):
+    return requests.get(file_path).json()
     
 def get_biggest_bar(bars):
     bar_name_seats = {}
@@ -42,6 +42,7 @@ url = 'https://devman.org/fshare/1503831681/4/'
 bars = load_data(url)['features']
 
 if __name__ == '__main__':
+    file_path = 'Введите путь к файлу .json\n'
     input_number = int(input('''Чтобы найти бар с наибольшей вместимостью, нажмите 1\n\
 Чтобы найти бар с наименьшей вместимостью, нажмите 2\n\
 Чтобый найти ближайший бар, нажмите 3\n'''))
