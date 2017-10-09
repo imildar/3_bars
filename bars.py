@@ -5,20 +5,19 @@ import math
 def load_data(file):
     return requests.get(file).json()
     
-def get_biggest_bar(data):
+def get_biggest_bar(bars):
     bar_name_seats = {}
-    for bar in data:
+    for bar in bars:
         bar_name_seats[bar['properties']['Attributes']['Name']] = bar['properties']['Attributes']['SeatsCount']
-    #biggest = sorted(bar_name_seats.items(), key=lambda k: -k[1])[0]
-    m = max(bar_name_seats.values())
-    return [x for x in bar_name_seats.keys() if bar_name_seats[x] == m]
+    max_bar = max(bar_name_seats.values())
+    return [x for x in bar_name_seats.keys() if bar_name_seats[x] == max_bar]
 
-def get_smallest_bar(data):
+def get_smallest_bar(bars):
     bar_name_seats = {}
-    for bar in data:
+    for bar in bars:
         bar_name_seats[bar['properties']['Attributes']['Name']] = bar['properties']['Attributes']['SeatsCount']
-    m = min(bar_name_seats.values())
-    return [x for x in bar_name_seats.keys() if bar_name_seats[x] == m]
+    min_bar = min(bar_name_seats.values())
+    return [x for x in bar_name_seats.keys() if bar_name_seats[x] == min_bar]
     
 
 
