@@ -21,7 +21,7 @@ def get_smallest_bar(bars):
     
 
 
-def get_closest_bar(data, longitude, latitude):
+def get_closest_bar(bars, longitude, latitude):
     bar_name_place = {}
     for bar in bars:
         bar_name_place[bar['properties']['Attributes']['Name']] = bar['geometry']['coordinates']
