@@ -39,7 +39,8 @@ def get_closest_bar(bars, longitude, latitude):
 
 url = 'https://devman.org/fshare/1503831681/4/'
 
-bars = load_data(url)['features']
+bars = load_
+(url)['features']
 
 if __name__ == '__main__':
     file_path = 'Введите путь к файлу .json\n'
